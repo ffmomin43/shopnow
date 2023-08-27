@@ -10,6 +10,7 @@ namespace ShopNow.WebUI.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.test = "Fahad";
             return View();
         }
 
