@@ -52,12 +52,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Common\IProductRepository.cs" />
+    <Compile Include="Common\Repository\EFRepositoryBase.cs" />
+    <Compile Include="Common\Repository\IRepository.cs" />
     <Compile Include="EF\ECommerceContext.cs" />
+    <Compile Include="ICategoryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShopNow.Model\ShopNow.Model.csproj">
+      <Project>{febd1fea-e98f-4476-afc6-3e8a1d7be20f}</Project>
+      <Name>ShopNow.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
