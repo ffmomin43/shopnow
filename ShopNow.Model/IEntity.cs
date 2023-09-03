@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ShopNow.Model
 {
-    public class Class1
+    public interface IEntity<TKey>
     {
+        TKey Id { get; set; }
     }
 }
