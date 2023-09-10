@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopNow.Repository
+namespace ShopNow.Repository.Common.Repository.Interface
 {
-    internal interface ICategoryRepository: IRepository<Category, int>
+    public interface IProductRepository: IRepository<Product, int>
     {
-        void Add(Category category);
+
     }
 }

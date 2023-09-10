@@ -1,14 +1,13 @@
 ﻿using ShopNow.Model;
-using ShopNow.Repository.Common.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopNow.Repository.Common
+namespace ShopNow.Repository.Common.Repository.Intefrace
 {
-    internal interface IProductRepository: IRepository<Product, int>
+    public interface ICategoryRepository : IRepository<Category, int>
     {
 
     }
