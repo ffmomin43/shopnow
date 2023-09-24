@@ -54,7 +54,9 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Common\Repository\Impl\CategoryRepository.cs" />
+    <Compile Include="Common\Repository\Impl\ProductImageRepository.cs" />
     <Compile Include="Common\Repository\Impl\ProductRepository.cs" />
+    <Compile Include="Common\Repository\Intefrace\IProductImageRepository.cs" />
     <Compile Include="Common\Repository\Intefrace\ICategoryRepository.cs" />
     <Compile Include="Common\Repository\Intefrace\IProductRepository.cs" />
     <Compile Include="Common\Repository\EFRepositoryBase.cs" />
@@ -67,6 +69,10 @@
     <Compile Include="Migrations\202309031034500_added_new_properties.cs" />
     <Compile Include="Migrations\202309031034500_added_new_properties.designer.cs">
       <DependentUpon>202309031034500_added_new_properties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309241449560_Added_new_models.cs" />
+    <Compile Include="Migrations\202309241449560_Added_new_models.designer.cs">
+      <DependentUpon>202309241449560_Added_new_models.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309031034500_added_new_properties.resx">
       <DependentUpon>202309031034500_added_new_properties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309241449560_Added_new_models.resx">
+      <DependentUpon>202309241449560_Added_new_models.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

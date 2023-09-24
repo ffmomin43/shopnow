@@ -1,3 +1,4 @@
+using ShopNow.StoreFront.WebUI.App_Start;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace ShopNow.StoreFront.WebUI
     {
         protected void Application_Start()
         {
+            AutofacConfig.Register();
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

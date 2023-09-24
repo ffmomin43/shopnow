@@ -1,0 +1,71 @@
+﻿@model ShopNow.Model.Product
+
+@{
+    ViewBag.Title = "AddProductImages";
+}
+
+<h2>AddProductImages</h2>
+
+@using (Html.BeginForm("AddProductImages", "Product",FormMethod.Post,new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Product</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.ProductTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <label>@Model.ProductTitle</label>
+
+            @Html.ValidationMessageFor(model => model.ProductTitle, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            Upload Images
+
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label class="control-label col-md-2">Image 1</label>
+                
+                <div class="col-md-10">
+                    <input type="file" id="Image1" name="UploadImage" class="form-control" accept=".jpg, .jpeg, .png, .mng, .img" />
+                    @Html.ValidationMessageFor(model => model.RatingNumber, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Image 2</label>
+
+                <div class="col-md-10">
+                    <input type="file" id="Image2" name="UploadImage" class="form-control" accept=".jpg, .jpeg, .png, .mng, .img"/>
+                    @Html.ValidationMessageFor(model => model.RatingNumber, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Image 3</label>
+
+                <div class="col-md-10">
+                    <input type="file" id="Image3" name="UploadImage" class="form-control" accept=".jpg, .jpeg, .png, .mng, .img" />
+                    @Html.ValidationMessageFor(model => model.RatingNumber, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

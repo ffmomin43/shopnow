@@ -1,0 +1,26 @@
+﻿@model  ShopNow.StoreFront.WebUI.Models.ProductBoxItemModel
+<li class="product-item">
+    <div class="product-thumb clearfix">
+        <a href="#" class="product-thumb">
+            <img src="@Model.ImageUrl" alt="image">
+        </a>
+        @if (Model.IsNewBadgeVisible)
+        {
+            <span class="new">New</span>
+        }
+
+    </div>
+    <div class="product-info text-center clearfix">
+        <span class="product-title">@Model.ProductTitle</span>
+        <div class="price">
+            <ins>
+                <span class="amount">@Model.ProductPrice</span>
+            </ins>
+        </div>
+        
+    </div>
+    <div class="add-to-cart text-center">
+        <a href="#">ADD TO CART</a>
+    </div>
+    <a href="#" class="like"><i class="fa fa-heart-o"></i></a>
+</li>
