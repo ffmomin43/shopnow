@@ -398,3 +398,4 @@ FodyWeavers.xsd
 *.sln.iml
 /ShopNow.WebUI/MyPhotos
 /ShopNow.WebUI/ShopNow.WebUI.csproj.user
+/ShopNow.StoreFront.WebUI/MyCDN

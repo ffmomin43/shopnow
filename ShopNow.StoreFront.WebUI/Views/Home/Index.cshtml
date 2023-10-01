@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    string[] showSliderInList = ViewBag.ShowSliderInList;
+    string currentClientId = ViewBag.CurrentClientId;
+
+    List<ShopNow.StoreFront.WebUI.Models.ProductBoxItemModel> products = ViewBag.Products;
+
+}
+
+@if (showSliderInList.Contains(currentClientId))
+{
+    @Html.Partial("_Slider")
+}
+
+
+@Html.Partial("_ImageCategoryBoxes")
+@Html.Partial("_NewProducts", products)
+@Html.Partial("_NewTrendAnimationBox")
+@Html.Partial("_BestSeller")
+@Html.Partial("_IconBox")
+
+

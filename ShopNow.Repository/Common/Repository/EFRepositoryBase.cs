@@ -37,15 +37,15 @@ namespace ShopNow.Repository.Common.Repository
             }
         }
 
-        public ICollection<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
+        public IQueryable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
         {
             try
             {
-                return this.GetSet().Where(predicate).ToList();
+                return this.GetSet().Where(predicate);
             }
             catch (Exception ex)
             {
-                return new List<TEntity>();
+                return null;
             }
         }
 
@@ -61,15 +61,15 @@ namespace ShopNow.Repository.Common.Repository
             }
         }
 
-        public ICollection<TEntity> GetAll()
+        public DbSet<TEntity> GetAll()
         {
             try
             {
-                return this.GetSet().ToList();
+                return this.GetSet();
             }
             catch (Exception)
             {
-                return new List<TEntity>();
+                return null;
             }
         }
 
