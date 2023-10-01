@@ -147,6 +147,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Customer\CustomerAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\TestController.cs" />
@@ -480,6 +481,7 @@
     <Content Include="Content\Theem\modaz\rev-slider\fonts\revicons\revicons90c690c6.eot" />
     <Content Include="Content\Theem\modaz\rev-slider\fonts\revicons\revicons90c690c6.ttf" />
     <Content Include="Content\Theem\modaz\rev-slider\fonts\revicons\revicons90c690c6.woff" />
+    <Content Include="Areas\Customer\Views\web.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -515,9 +517,13 @@
     <Content Include="Views\Home\_BestSeller.cshtml" />
     <Content Include="Views\Home\_IconBox.cshtml" />
     <Content Include="Views\Shared\_ProductBoxForList.cshtml" />
+    <Content Include="Views\Home\Shop.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Customer\Controllers\" />
+    <Folder Include="Areas\Customer\Data\" />
+    <Folder Include="Areas\Customer\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

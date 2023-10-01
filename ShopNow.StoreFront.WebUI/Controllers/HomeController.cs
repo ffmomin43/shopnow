@@ -25,6 +25,46 @@ namespace ShopNow.StoreFront.WebUI.Controllers
             this.categoryRepository = categoryRepository;
             this.productImageRepository = productImageRepository;
         }
+
+        public ActionResult Shop()
+        {
+
+            var allProducts = productRepository.GetAll()
+                                .Include("ProductImages");
+                                
+            
+            var productBoxItemModelList = (from p in allProducts
+                                           select new ProductBoxItemModel()
+                                           {
+                                               Id = p.Id,
+                                               ImageUrl = @"/MyCDN/" + p.ProductImages.FirstOrDefault().ImageUrl,
+                                               IsNewBadgeVisible = false,
+                                               ProductPrice = p.SalePrice,
+                                               ProductTitle = p.ProductTitle
+                                           }).OrderByDescending(x => x.Id);
+
+            ViewBag.ProductCount = productBoxItemModelList.Count();
+
+            List<List<ProductBoxItemModel>> finalList = new List<List<ProductBoxItemModel>>();
+            int numberOfrows = productBoxItemModelList.Count() % 3 == 0 ?
+                productBoxItemModelList.Count() / 3 :
+                (productBoxItemModelList.Count() / 3) + 1;
+            int count = 0;
+            for (int i=1;i<= numberOfrows; i++)
+            {
+                List<ProductBoxItemModel> products = new List<ProductBoxItemModel>();
+                for (int j=1; j<=3 && count<productBoxItemModelList.Count() ;j++)
+                {
+                    products.Add(productBoxItemModelList.ToArray()[count]);
+                    count++;
+                }
+                finalList.Add(products);
+            }
+            
+            
+            return View(finalList);
+        }
+
         // GET: Home
         public ActionResult Index()
         {
@@ -34,19 +74,22 @@ namespace ShopNow.StoreFront.WebUI.Controllers
             ViewBag.ShowSliderInList = showSliderInList;
             ViewBag.CurrentClientId = currentClientId;
 
-            var allProducts = productRepository.GetAll();
-            var productImages=productImageRepository.GetAll();
+            var allProducts = productRepository.GetAll()
+                                .Include("ProductImages")
+                                .ToList()
+                                .Where(x=>x.ProductImages.Count()>=1);
 
-            var productBoxItemModelList = (from p in allProducts
-                       join pi in productImages on p.Id equals pi?.Product?.Id
-                       select new ProductBoxItemModel()
-                       {
-                           Id=p.Id,
-                           ImageUrl = @"C:\\MyCDN"+pi.ImageUrl,
-                           IsNewBadgeVisible = true,
-                           ProductPrice = p.SalePrice,
-                           ProductTitle = p.ProductTitle
-                       }).OrderByDescending(x=>x.Id).Take(4);
+            //var productImages=productImageRepository.GetAll();
+
+            var productBoxItemModelList = (from p in allProducts                                          
+                                           select new ProductBoxItemModel()
+                                           {
+                                               Id = p.Id,                                               
+                                               ImageUrl = @"/MyCDN/" + p.ProductImages.First().ImageUrl,
+                                               IsNewBadgeVisible = true,
+                                               ProductPrice = p.SalePrice,
+                                               ProductTitle = p.ProductTitle
+                                           }).OrderByDescending(x=>x.Id).Take(4);
 
 
 

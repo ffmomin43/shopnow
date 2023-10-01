@@ -11,7 +11,7 @@
     <title>Modaz HTML Template</title>
 
     <meta name="author" content="themesflat.com">
-
+    
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
@@ -85,45 +85,12 @@
                         <nav id="mainnav" class="mainnav">
                             <ul class="menu">
                                 <li>
-                                    <a href="index.html">HOME</a>
-                                    <ul class="submenu">
-                                        <li><a href="index.html">Homepage Style 1</a></li>
-                                        <li><a href="index-v2.html">Homepage Style 2</a></li>
-                                        <li><a href="index-v3.html">Homepage Style 3</a></li>
-                                        <li><a href="index-v4.html">Homepage Style 4</a></li>
-                                        <li><a href="index-v5.html">Homepage Style 5</a></li>
-                                        <li><a href="index-v6.html">Homepage Style 6</a></li>
-                                        <li><a href="index-v7.html">Homepage Style 7</a></li>
-                                        <li><a href="index-v8.html">Homepage Style 8</a></li>
-                                        <li><a href="index-v9.html">Homepage Style 9</a></li>
-                                        <li><a href="index-v10.html">Homepage Style 10</a></li>
-                                    </ul>
+                                    <a href="@Url.Action("Index","Home")">HOME</a>
+                                    
                                 </li>
                                 <li>
-                                    <a href="shop-3col.html">SHOP</a>
-                                    <ul class="submenu">
-                                        <li>
-                                            <a href="shop-3col.html">Shop Layouts</a>
-                                            <ul class="submenu">
-                                                <li><a href="shop-3col.html">Three Columns</a></li>
-                                                <li><a href="shop-4col.html">Four Columns</a></li>
-                                                <li><a href="shop-5col.html">Five Columns</a></li>
-                                                <li><a href="shop-3col-slide.html">Slidebar Three Columns</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="shop-detail-des.html">Shop Details</a>
-                                            <ul class="submenu">
-                                                <li><a href="shop-detail-des.html">Details Description</a></li>
-                                                <li><a href="shop-detail-exter.html">Details External</a></li>
-                                                <li><a href="shop-detail-option.html">Details Options</a></li>
-                                                <li><a href="shop-detail-fix.html">Details Fix</a></li>
-                                                <li><a href="shop-detail-zoom.html">Details Zoom</a></li>
-                                                <li><a href="shop-detail-group.html">Details Grouped</a></li>
-                                                <li><a href="shop-detail-video.html">Details Video</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                    <a href="@Url.Action("Shop","Home")">SHOP</a>
+                                    
                                 </li>
                                 <li class="active">
                                     <a href="coming-soon.html">PAGE</a>
@@ -252,7 +219,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="copyright text-center">Copyright @@2018 <a href="#">Modaz</a></p>
+                        <p class="copyright text-center">Copyright @@2018-@DateTime.Now.Year <a href="#">Modaz</a></p>
                     </div>
                 </div>
             </div>

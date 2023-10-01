@@ -14,6 +14,7 @@ namespace ShopNow.Model
 
         public string AltText { get; set; }
 
+
         public Product Product { get; set; }
 
     }

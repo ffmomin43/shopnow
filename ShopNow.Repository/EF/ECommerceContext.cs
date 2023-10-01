@@ -7,6 +7,7 @@ namespace ShopNow.Repository.EF
         public ECommerceContext():base("ECommConnSt")
         {
                 this.Configuration.LazyLoadingEnabled = false;
+            
         }
 
         public DbSet<Model.Product> Products { get; set; }
