@@ -9,7 +9,7 @@ namespace ShopNow.Repository.Common.Repository
 {
     public abstract class EFRepositoryBase<TContext, TEntity, TKey> : IRepository<TEntity, TKey> where TEntity : class where TContext : DbContext
     {
-        private readonly DbContext m_dbContext;
+        protected readonly DbContext m_dbContext;
 
         public EFRepositoryBase()
             : this(Activator.CreateInstance<TContext>())

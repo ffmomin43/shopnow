@@ -518,6 +518,7 @@
     <Content Include="Views\Home\_IconBox.cshtml" />
     <Content Include="Views\Shared\_ProductBoxForList.cshtml" />
     <Content Include="Views\Home\Shop.cshtml" />
+    <Content Include="Views\Shared\InvalidRequest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

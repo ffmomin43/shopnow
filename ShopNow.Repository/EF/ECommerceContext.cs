@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using ShopNow.Model;
+using System.Data.Entity;
 
 namespace ShopNow.Repository.EF
 {
@@ -10,12 +11,18 @@ namespace ShopNow.Repository.EF
             
         }
 
-        public DbSet<Model.Product> Products { get; set; }
+        public DbSet<Product> Products { get; set; }
 
-        public DbSet<Model.Category> Categories  { get; set; }
+        public DbSet<Category> Categories  { get; set; }
 
-        public DbSet<Model.ProductBullet> ProductBullets { get; set; }
+        public DbSet<ProductBullet> ProductBullets { get; set; }
 
-        public DbSet<Model.ProductImage> ProductImages { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
+
+        public DbSet<Customer> Customers { get; set; }
+
+        public DbSet<Order> Orders { get; set; }
+
+        public DbSet<OrderDetail> OrdersDetails { get; set; }
     }
 }

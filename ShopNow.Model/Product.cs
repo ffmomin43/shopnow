@@ -23,8 +23,8 @@ namespace ShopNow.Model
 
         public int AvailableQuantity { get; set; }
 
-        public List<ProductImage> ProductImages { get; set; }
+        public virtual ICollection<ProductImage> ProductImages { get; set; }
 
-        public List<ProductBullet> ProductBullets { get; set; }
+        public virtual ICollection<ProductBullet> ProductBullets { get; set; }
     }
 }
