@@ -44,7 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="Common\Enum\EnumHelper.cs" />
+    <Compile Include="Customer.cs" />
     <Compile Include="IEntity.cs" />
+    <Compile Include="OrderDetail.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductBullet.cs" />
     <Compile Include="ProductImage.cs" />
